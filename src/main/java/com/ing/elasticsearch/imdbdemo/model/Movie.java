@@ -8,7 +8,6 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 @Document(indexName = "imdb", type = "movie")
 @Data
@@ -17,20 +16,23 @@ import java.util.UUID;
 public class Movie {
 
     @Id
-    private UUID id;
-    private String title;
+    //private UUID id;
+    private String tconst;
+    private String primaryTitle;
     private String director;
-    private int releaseYear;
-    private List<String> actors;
+    private int startYear;
+    private String runtimeMinutes;
+    private List<String> genres;
 
     @Override
     public String toString() {
         return "Movie{" +
-                "id='" + id.toString() + '\'' +
-                ", title='" + title + '\'' +
+                "id='" + tconst + '\'' +
+                ", title='" + primaryTitle + '\'' +
                 ", director='" + director + '\'' +
-                ", releaseYear='" + releaseYear + '\'' +
-                ", actors='" + Arrays.toString(actors.toArray())+ '\'' +
+                ", startYear='" + startYear + '\'' +
+                ", minutes='" + runtimeMinutes + '\'' +
+                ", genres='" + Arrays.toString(genres.toArray())+ '\'' +
                 '}';
     }
 }

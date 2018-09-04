@@ -12,7 +12,9 @@ public interface MovieRepository extends ElasticsearchRepository<Movie, UUID> {
 
     Page<Movie> findByDirector(String director, Pageable pageable);
 
-    List<Movie> findByTitle(String title);
+    List<Movie> findByPrimaryTitle(String title);
+
+
 
 }
 
